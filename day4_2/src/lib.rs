@@ -1,4 +1,4 @@
-use std::ops::Range;
+use std::{ops::Range, io::{Lines, BufReader}, fs::File};
 
 use regex::Regex;
 use lazy_static::lazy_static;
@@ -18,8 +18,7 @@ impl aoc_common::Puzzle for Puzzle {
         return 4;
     }
 
-    fn get_result(&self, path: &str) -> u32 {
-        let lines = aoc_common::input_lines(path);
+    fn get_result(&self, lines: Lines<BufReader<File>>) -> u32 {
         let mut result = 0;
         for line in lines {
             if let Ok(val) = line {
