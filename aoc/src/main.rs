@@ -26,7 +26,10 @@ fn main() {
         i.get_name() == puzzle
     }).expect("Please specify a puzzle!");
     let lines = get_input_lines(get_puzzle_path(*found_puzzle, false).as_str());
-    let result = found_puzzle.get_result(lines);
+    let lines_vec = lines.map(|x| {
+        x.unwrap()
+    }).collect::<Vec<String>>();
+    let result = found_puzzle.get_result(lines_vec);
     println!("Result: {}", result);
 }
 
@@ -43,7 +46,10 @@ mod tests {
     fn test_puzzle(puzzle: &dyn aoc_common::Puzzle) {
         let expected = puzzle.get_expected_test_result();
         let lines = get_input_lines(get_puzzle_path(puzzle, true).as_str());
-        let result = puzzle.get_result(lines);
+        let lines_vec = lines.map(|x| {
+            x.unwrap()
+        }).collect::<Vec<String>>();    
+        let result = puzzle.get_result(lines_vec);
             assert_eq!(expected, result);
     }
 }

@@ -1,4 +1,4 @@
-use std::{ops::Range, io::{Lines, BufReader}, fs::File};
+use std::ops::Range;
 
 use regex::Regex;
 use lazy_static::lazy_static;
@@ -18,14 +18,12 @@ impl aoc_common::Puzzle for Puzzle {
         return 4;
     }
 
-    fn get_result(&self, lines: Lines<BufReader<File>>) -> u32 {
+    fn get_result(&self, lines: Vec<String>) -> u32 {
         let mut result = 0;
         for line in lines {
-            if let Ok(val) = line {
-                if let Some(pair) = parse_line(&val) {
-                    if range_overlaps(&pair.0, &pair.1) || range_overlaps(&pair.1, &pair.0) {
-                        result += 1;
-                    }
+            if let Some(pair) = parse_line(&line) {
+                if range_overlaps(&pair.0, &pair.1) || range_overlaps(&pair.1, &pair.0) {
+                    result += 1;
                 }
             }
         }
