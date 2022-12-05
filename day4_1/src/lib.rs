@@ -14,11 +14,11 @@ impl aoc_common::Puzzle for Puzzle {
         self.name
     }
 
-    fn get_expected_test_result(&self) -> u32 {
-        return 2;
+    fn get_expected_test_result(&self) -> &str {
+        return "2";
     }
 
-    fn get_result(&self, lines: Vec<String>) -> u32 {
+    fn get_result(&self, lines: Vec<String>) -> String {
         let mut result = 0;
         for line in lines {
             if let Some(pair) = parse_line(&line) {
@@ -28,7 +28,7 @@ impl aoc_common::Puzzle for Puzzle {
             }
         }
 
-        return result;
+        return result.to_string();
     }
 }
 

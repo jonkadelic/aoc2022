@@ -1,8 +1,10 @@
 use std::{io::{Lines, BufReader, BufRead}, fs::File};
 
-const PUZZLES: [&dyn aoc_common::Puzzle; 2] = [
+const PUZZLES: [&dyn aoc_common::Puzzle; 4] = [
     &day4_1::PUZZLE as &dyn aoc_common::Puzzle,
-    &day4_2::PUZZLE as &dyn aoc_common::Puzzle
+    &day4_2::PUZZLE as &dyn aoc_common::Puzzle,
+    &day5_1::PUZZLE as &dyn aoc_common::Puzzle,
+    &day5_2::PUZZLE as &dyn aoc_common::Puzzle,
 ];
 
 fn get_puzzle_path(puzzle: &dyn aoc_common::Puzzle, test: bool) -> String {
@@ -41,7 +43,9 @@ mod tests {
 
     #[parameterized(
         day4_1 = { PUZZLES[0] },
-        day4_2 = { PUZZLES[1] }
+        day4_2 = { PUZZLES[1] },
+        day5_1 = { PUZZLES[2] },
+        day5_2 = { PUZZLES[3] },
     )]
     fn test_puzzle(puzzle: &dyn aoc_common::Puzzle) {
         let expected = puzzle.get_expected_test_result();

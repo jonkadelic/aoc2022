@@ -18,6 +18,8 @@ dependencies = [
  "aoc_common",
  "day4_1",
  "day4_2",
+ "day5_1",
+ "day5_2",
  "yare",
 ]
 
@@ -36,6 +38,24 @@ dependencies = [
 
 [[package]]
 name = "day4_2"
+version = "0.1.0"
+dependencies = [
+ "aoc_common",
+ "lazy_static",
+ "regex",
+]
+
+[[package]]
+name = "day5_1"
+version = "0.1.0"
+dependencies = [
+ "aoc_common",
+ "lazy_static",
+ "regex",
+]
+
+[[package]]
+name = "day5_2"
 version = "0.1.0"
 dependencies = [
  "aoc_common",
