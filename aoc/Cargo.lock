@@ -22,6 +22,8 @@ dependencies = [
  "day5_2",
  "day6_1",
  "day6_2",
+ "day7_1",
+ "day7_2",
  "yare",
 ]
 
@@ -74,6 +76,20 @@ dependencies = [
 
 [[package]]
 name = "day6_2"
+version = "0.1.0"
+dependencies = [
+ "aoc_common",
+]
+
+[[package]]
+name = "day7_1"
+version = "0.1.0"
+dependencies = [
+ "aoc_common",
+]
+
+[[package]]
+name = "day7_2"
 version = "0.1.0"
 dependencies = [
  "aoc_common",

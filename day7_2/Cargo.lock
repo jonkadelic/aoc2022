@@ -7,7 +7,7 @@ name = "aoc_common"
 version = "0.1.0"
 
 [[package]]
-name = "day6_2"
+name = "day7_2"
 version = "0.1.0"
 dependencies = [
  "aoc_common",
